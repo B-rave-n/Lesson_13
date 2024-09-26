@@ -3,8 +3,8 @@ class Human:
     def __init__(self, gender, age, first_name, last_name):
         self.gender = gender
         self.age = age
-        self.first_name = first_name.title()
-        self.last_name = last_name.title()
+        self.first_name = first_name
+        self.last_name = last_name
 
 
     def __str__(self):
@@ -30,12 +30,12 @@ class Group:
 
     def delete_student(self, last_name):
         for student in list(self.group):
-            if student.last_name == last_name:
+            if student.last_name == last_name.title():
                 self.group.discard(student)
 
     def find_student(self, last_name):
         for student in self.group:
-            if student.last_name == last_name:
+            if student.last_name == last_name.title():
                 return student
         return None
 
