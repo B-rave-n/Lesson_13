@@ -6,10 +6,10 @@ class Counter:
        self.max_value = max_value
 
    def set_current(self, start):
-       self.current = start
+        self.current = start
 
    def set_max(self, max_max):
-        self.max_value = max_max
+       self.max_value = max_max
 
    def set_min(self, min_min):
        self.min_value = min_min
@@ -18,14 +18,14 @@ class Counter:
        if self.current < self.max_value:
            self.current += 1
        else:
-           raise ValueError
+           raise ValueError('Досягнуто максимуму!')
 
 
    def step_down(self):
        if self.current > self.min_value:
            self.current -= 1
        else:
-           raise ValueError
+           raise ValueError('Досягнуто мінімуму!')
 
    def get_current(self):
        return self.current

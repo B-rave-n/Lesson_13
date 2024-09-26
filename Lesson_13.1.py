@@ -29,21 +29,20 @@ class Group:
         self.group.add(student)
 
     def delete_student(self, last_name):
-        for i in list(self.group):
-            if str(i).count(last_name) > 0:
-                self.group.discard(i)
+        for student in list(self.group):
+            if student.last_name == last_name:
+                self.group.discard(student)
 
     def find_student(self, last_name):
-        for i in self.group:
-            if last_name in str(i):
-                return list(self.group)[list(self.group).index(i)]
-            else:
-                return
+        for student in self.group:
+            if student.last_name == last_name:
+                return student
+        return None
 
     def __str__(self):
-        all_students = f'{self.group}'
+        all_students = '\n'.join(str(student) for student in self.group)
         ...
-        return f'Number:{self.number}\\n {all_students} '
+        return f'Group:{self.number}\n {all_students} '
 
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
